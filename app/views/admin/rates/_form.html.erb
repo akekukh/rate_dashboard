@@ -1,0 +1,27 @@
+<%= form_with(model: admin_rate, local: true, class: "form-group") do |form| %>
+  <% if admin_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_rate.errors.count, "error") %> prohibited this admin_rate from being saved:</h2>
+
+      <ul>
+        <% admin_rate.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :rate %>
+    <%= form.number_field :rate, step: :any, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :finished_at %>
+    <%= form.datetime_select :finished_at, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

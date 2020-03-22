@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @admin_rate.rate %>
+</p>
+
+<p>
+  <strong>Finished at:</strong>
+  <%= @admin_rate.finished_at %>
+</p>
+
+<%= link_to 'Edit', edit_admin_rate_path(@admin_rate) %> |
+<%= link_to 'Back', root_path %>

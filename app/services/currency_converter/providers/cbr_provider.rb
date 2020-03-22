@@ -6,7 +6,6 @@ module CurrencyConverter
   module Providers
     class CbrProvider < Middleware
       SERVICE_URI = 'http://www.cbr.ru/scripts/xml_daily.asp'
-      DEFAULT_RUB_RATE = { RUB: '1' }.freeze
 
       def call
         parse_response(request)

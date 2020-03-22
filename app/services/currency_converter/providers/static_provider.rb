@@ -6,7 +6,7 @@ module CurrencyConverter
       attr_writer :rates
 
       def call
-        @rates || {}
+        DEFAULT_RUB_RATE.merge({ USD: RateRepository.new.find_active.rate.to_s })
       end
     end
   end

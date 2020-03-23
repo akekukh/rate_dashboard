@@ -18,7 +18,8 @@
 
   <div class="form-group">
     <%= form.label :finished_at %>
-    <%= form.datetime_select :finished_at, required: true %>
+
+    <%= form.datetime_local_field :finished_at, required: true, ampm: true %>
   </div>
 
   <div class="actions">

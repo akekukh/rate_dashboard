@@ -1,0 +1,19 @@
+---
+:verbose: false
+:concurrency: 10
+:timeout: 60
+:queues:
+  - default
+
+defaults: &defaults
+  :processes: <%= ENV.fetch("SIDEKIQ_PROCESSES") { 3 } %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

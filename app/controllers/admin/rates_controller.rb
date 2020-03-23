@@ -23,7 +23,6 @@ class Admin::RatesController < ApplicationController
   # POST /admin/rates.json
   def create
     @admin_rate = Admin::Rate.new(admin_rate_params)
-
     respond_to do |format|
       if @admin_rate.save
         format.html { redirect_to admin_root_url, notice: 'Rate was successfully created.' }

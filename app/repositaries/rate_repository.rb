@@ -6,6 +6,7 @@ class RateRepository
   end
 
   def find_active
-    @data_source.where('finished_at > ?', DateTime.now).last
+    record = @data_source.last
+    record && record.finished_at > DateTime.now ? record : nil
   end
 end

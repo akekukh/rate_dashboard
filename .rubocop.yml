@@ -2,6 +2,7 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   TargetRubyVersion: 2.6
   Exclude:
+    - vendor/bundle/**/*
     - db/schema.rb
     - db/migrate/**.rb
     - tmp/**.rb

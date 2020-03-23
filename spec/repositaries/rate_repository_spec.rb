@@ -13,7 +13,7 @@ RSpec.describe RateRepository, type: :respository do
 
     it 'returns nil if data is absent' do
       stub_request(:get, /.*cbr.ru.*/)
-          .to_return(status: 200, body: File.read('spec/fixtures/currency_converter/cbr_response.xml'), headers: {})
+        .to_return(status: 200, body: File.read('spec/fixtures/currency_converter/cbr_response.xml'), headers: {})
       create(:rate, finished_at: DateTime.now - 1.day)
       expect(repository.find_active).to be_nil
     end
@@ -30,5 +30,4 @@ RSpec.describe RateRepository, type: :respository do
 
     @data_source = Admin::Rate
   end
-
 end
